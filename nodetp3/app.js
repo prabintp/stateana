@@ -16,48 +16,24 @@ passport = require('passport'),
 LocalStrategy = require('passport-local').Strategy;
   
 //MySQL
-/*
+
 var sqlInfo = {
     host: 'localhost', 
     user: 'root',
-    password: 'exalt', 
+    password: '', 
     database: 'sa'
 }
+/*
 
+var sqlInfo = {
+  host: 'ap01-user01.c0ye1hvnkw6z.ap-southeast-1.rds.amazonaws.com', 
+  user: 'uHJnIOAz4pfz8',
+  password: 'p1ER20bCzfHjp', 
+  database: 'd14a406252e744680aca10c5e2ca8026c',
+  port:3306
+}
 */
-var sqlInfo = {
-  host: 'ap01-user01.c0ye1hvnkw6z.ap-southeast-1.rds.amazonaws.com', 
-  user: 'uHJnIOAz4pfz8',
-  password: 'p1ER20bCzfHjp', 
-  database: 'd14a406252e744680aca10c5e2ca8026c',
-  port:3306
-}
 
-/*
-if(process.env.VCAP_SERVICES){
-	var menv = JSON.parse(process.env.VCAP_SERVICES);
-	var mysql = menv['mysql-5.1'][0]['credentials'];
-	
-	var sqlInfo = {
-  host: 'ap01-user01.c0ye1hvnkw6z.ap-southeast-1.rds.amazonaws.com', 
-  user: 'uHJnIOAz4pfz8',
-  password: 'p1ER20bCzfHjp', 
-  database: 'd14a406252e744680aca10c5e2ca8026c',
-  port:3306
-}
-	
-	
-	}else{
-		
-	var sqlInfo = {
-    host: 'localhost', 
-    user: 'root',
-    password: 'exalt', 
-    database: 'sa'
-}
-		
-		}
-*/		
 		
 
 	
