@@ -1,0 +1,257 @@
+//
+     start: Header 
+    .navbar(ng-app='nav')
+      .navbar-inner
+        .container-fluid
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.top-nav.nav-collapse,.sidebar-nav.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a#main-menu-toggle.hidden-phone.open
+            i.icon-reorder
+          .row-fluid
+            a.brand.span2(href='index.html')
+              span SimpliQ
+          //
+             start: Header Menu 
+          .nav-no-collapse.header-nav
+            ul.nav.pull-right
+              li.dropdown.hidden-phone
+                a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+                  i.icon-warning-sign
+                ul.dropdown-menu.notifications
+                  li.dropdown-menu-title
+                    span You have 11 notifications
+                  li
+                    a(href='#')
+                      span.icon.blue
+                        i.icon-user
+                      span.message New user registration
+                      span.time 1 min
+                  li
+                    a(href='#')
+                      span.icon.green
+                        i.icon-comment-alt
+                      span.message New comment
+                      span.time 7 min
+                  li
+                    a(href='#')
+                      span.icon.green
+                        i.icon-comment-alt
+                      span.message New comment
+                      span.time 8 min
+                  li
+                    a(href='#')
+                      span.icon.green
+                        i.icon-comment-alt
+                      span.message New comment
+                      span.time 16 min
+                  li
+                    a(href='#')
+                      span.icon.blue
+                        i.icon-user
+                      span.message New user registration
+                      span.time 36 min
+                  li
+                    a(href='#')
+                      span.icon.yellow
+                        i.icon-shopping-cart
+                      span.message 2 items sold
+                      span.time 1 hour
+                  li.warning
+                    a(href='#')
+                      span.icon.red
+                        i.icon-user
+                      span.message User deleted account
+                      span.time 2 hour
+                  li.warning
+                    a(href='#')
+                      span.icon.red
+                        i.icon-shopping-cart
+                      span.message Transaction was canceled
+                      span.time 6 hour
+                  li
+                    a(href='#')
+                      span.icon.green
+                        i.icon-comment-alt
+                      span.message New comment
+                      span.time yesterday
+                  li
+                    a(href='#')
+                      span.icon.blue
+                        i.icon-user
+                      span.message New user registration
+                      span.time yesterday
+                  li.dropdown-menu-sub-footer
+                    a View all notifications
+              //
+                 start: Notifications Dropdown 
+              li.dropdown.hidden-phone
+                a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+                  i.icon-tasks
+                ul.dropdown-menu.tasks
+                  li
+                    span.dropdown-menu-title You have 17 tasks in progress
+                  li
+                    a(href='#')
+                      span.header
+                        span.title iOS Development
+                        span.percent
+                      .taskProgress.progressSlim.progressBlue 80
+                  li
+                    a(href='#')
+                      span.header
+                        span.title Android Development
+                        span.percent
+                      .taskProgress.progressSlim.progressYellow 47
+                  li
+                    a(href='#')
+                      span.header
+                        span.title Django Project For Google
+                        span.percent
+                      .taskProgress.progressSlim.progressRed 32
+                  li
+                    a(href='#')
+                      span.header
+                        span.title SEO for new sites
+                        span.percent
+                      .taskProgress.progressSlim.progressGreen 63
+                  li
+                    a(href='#')
+                      span.header
+                        span.title New blog posts
+                        span.percent
+                      .taskProgress.progressSlim.progressPink 80
+                  li
+                    a.dropdown-menu-sub-footer View all tasks
+              //
+                 end: Notifications Dropdown 
+              //
+                 start: Message Dropdown 
+              li.dropdown.hidden-phone
+                a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+                  i.icon-envelope
+                ul.dropdown-menu.messages
+                  li
+                    span.dropdown-menu-title You have 9 messages
+                  li
+                    a(href='#')
+                      span.avatar
+                        img(src='public/img/avatar.jpg', alt='Avatar')
+                      span.header
+                        span.from
+                          | Lukasz Holeczek
+                        span.time
+                          | 6 min
+                      span.message
+                        | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                  li
+                    a(href='#')
+                      span.avatar
+                        img(src='public/img/avatar2.jpg', alt='Avatar')
+                      span.header
+                        span.from
+                          | Megan Abott
+                        span.time
+                          | 56 min
+                      span.message
+                        | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                  li
+                    a(href='#')
+                      span.avatar
+                        img(src='img/avatar3.jpg', alt='Avatar')
+                      span.header
+                        span.from
+                          | Kate Ross
+                        span.time
+                          | 3 hours
+                      span.message
+                        | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                  li
+                    a(href='#')
+                      span.avatar
+                        img(src='img/avatar4.jpg', alt='Avatar')
+                      span.header
+                        span.from
+                          | Julie Blank
+                        span.time
+                          | yesterday
+                      span.message
+                        | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                  li
+                    a(href='#')
+                      span.avatar
+                        img(src='img/avatar5.jpg', alt='Avatar')
+                      span.header
+                        span.from
+                          | Jane Sanders
+                        span.time
+                          | Jul 25, 2012
+                      span.message
+                        | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                  li
+                    a.dropdown-menu-sub-footer View all messages
+              //
+                 end: Message Dropdown 
+              li
+                a.btn(href='#')
+                  i.icon-wrench
+              //
+                 start: User Dropdown 
+              li.dropdown
+                a.btn.account.dropdown-toggle(data-toggle='dropdown', href='#')
+                  .avatar
+                    img(src='public/img/avatar.jpg', alt='Avatar')
+                  .user
+                    span.hello Welcome!
+                    span.name #{username}
+                ul.dropdown-menu
+                  li.dropdown-menu-title
+                  li
+                    a(href='#')
+                      i.icon-user
+                      | Profile
+                  li
+                    a(href='#')
+                      i.icon-cog
+                      | Settings
+                  li
+                    a(href='#')
+                      i.icon-envelope
+                      | Messages
+                  li
+                    a(href='/logout')
+                      i.icon-off
+                      | Logout
+    //
+       start: Header 
+    .container-fluid-full
+      include menu.jade
+        //
+           start: Content 
+        #content.span10(ng-controller="sitesController")
+          .row-fluid
+            .span12(ontablet='span6', ondesktop='span12')
+                .span4.smallstat.box.mobileHalf(ng-repeat="site in sites")
+                  .boxchart-overlay.blue
+                    .boxchart 5,6,7,2,0,4,2,4,8,2,3,3,2,5,6,7,2,0,4,2,4,8,2,3,3,2
+                  .title 
+                  | Project
+                  .value
+                  | {{site.project_name}}
+                  .title
+                  | Views by {{site.total_page_views}}
+                  .value
+                  .title People
+           end: Content 
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+            h4.modal-title Modal title
+          .modal-body
+            | ...
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Save changes

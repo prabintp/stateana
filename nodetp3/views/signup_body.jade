@@ -1,0 +1,32 @@
+div(class='container-fluid-full',,ng-controller='signupCrtl')
+    .row-fluid
+        .row-fluid
+          .login-box
+            h2 Login to your account
+            form.form-horizontal(action='/signupSubmit',method='post')
+              fieldset
+                input#username.input-large.span12(name='email', type='email', placeholder='type email')
+                input#username.input-large.span12(name='username', type='text', placeholder='type username')
+                input#password.input-large.span12(name='password', type='password', placeholder='type password')
+                input#password.input-large.span12(name='conpassword', type='password', placeholder='confirm password')
+                .clearfix
+                label.remember(for='remember')
+                  input#remember(type='checkbox')
+                  | Remember me
+                .clearfix
+                button.btn.btn-primary.span12(type='submit') 
+                 |Signup
+            hr
+            h3 Forgot Password?
+            p
+              | No problem,
+              a(href='#') click here
+              | to get a new password.
+          //
+            /span
+        //
+          /row
+      //
+        /fluid-row
+    //
+      /.fluid-container

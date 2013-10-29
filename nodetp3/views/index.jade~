@@ -1,0 +1,120 @@
+extends layout
+
+block body
+ include nav_bar_home.jade
+ .container-fluid-full
+    .row-fluid
+        //
+           ### HEADER_SLIDER Module Position Section Start ### 
+        #header_slider.joobstrap_section.sourrounding_wrapper.head_slide
+          div
+            .container
+              .row
+                .col-md-12.slider_controls
+                  .flexslider
+                    ul.slides
+                      //
+                         Slide 1 
+                      li.slider_item.text-align-center
+                        div(style='padding: 180px 0;')
+                          p.text-center
+                            img.img-circle(src='img/blogger.jpg', alt='owner1', width='75')
+                            | &
+                            img.img-circle(src='img/ceo.jpg', alt='owner1', width='75')
+                          h1.hero
+                            | Why we code
+                            span.colored .
+                          p.lead
+                            | We are a tiny but passionated front- and backend coding team. We collect Star Wars toys and never missed a TNG episode but Nerds we are not.
+                          p
+                            a.btn.btn-primary.btn-xl(href='index.html#')
+                              | Start with us
+                              i.icon-angle-right
+                      //
+                         Slide 2 
+                      li.slider_item.text-align-center
+                        div(style='padding: 140px 0 40px 0;')
+                          h1.hero
+                            | What we code
+                            span.colored .
+                          p.lead
+                            | We are a tiny but passionated front- and backend coding team. We collect Star Wars toys and never missed a TNG episode but Nerds we are not.
+                        img.img-responsive(src='img/sample_screen.jpg', alt='screen')
+        //
+           ### HEADER_SLIDER Module Position Section End ### 
+      //
+        /fluid-row
+    //
+      /.fluid-container
+ 
+ .container-fluid-full#about.sourrounding_wrapper.text-center.inner_wrapper
+       .row
+        .span12
+          h2.module-title
+            span We do 
+            | what we love
+          p.lead.text-center
+            | Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          hr
+       .row
+        .span3
+          h5 Dolor sit amet
+          p
+            | Lorem ipsum dolor sit amet, consectetuer ipsum dolor adipiscing elit, sed diam nonummy nibh euismod.
+          hr
+          h5 Nonummy nibh
+          p
+            | Lorem ipsum dolor sit amet, consectetuer adipiscing  nonummy nibh euismod tincidunt ipsum dolor dolore magna.
+        .span3
+          h5 Adipiscing elit?
+          p
+            | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+          hr
+          h5 Lorem ipsum
+          p
+            | Lorem ipsum dolor sit amet, consectetuer adipiscing ipsum dolor elit, sed diam nonummy nibh euismod.
+        .span6
+          img.img-responsive(alt='ipad image', src='img/ipad.png')
+      .clear
+ .container-fluid-full
+    .row-fluid#signup
+       .signup-box.pull-left.bg-none
+            h2 
+             | like what you see? Signup and get notified when we launch.
+            form.form-horizontal(action='/signup_submit',method='post')
+              fieldset
+                input#username.input-large.span12(name='email', type='email', placeholder='email', ng-model='aemail')
+                input#password.input-large.span12(name='password', type='password', placeholder='password')
+                input#password.input-large.span12.btn.btn-primary(name='submit', type='submit',value='signUp')
+                .clearfix
+ .container-fluid-full
+    .row-fluid#tfooter.inner_wrapper
+       
+ #myModalLogin.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+            h4.modal-title Login to your account
+          .modal-body
+            div(class='container-fluid-full',,ng-controller='AppCtrl')
+              .login-box
+                form.form-horizontal(action='/login',method='post')
+                 fieldset
+                   input#username.input-large.span12(name='username', type='text', placeholder='type username')
+                   input#password.input-large.span12(name='password', type='password', placeholder='type password')
+                   .clearfix
+                   label.remember(for='remember')
+                     input#remember(type='checkbox')
+                     | Remember me
+                   .clearfix
+                   button.btn.btn-primary.span12(type='submit') Login
+                hr
+                h3 Forgot Password?
+                p
+                    | No problem,
+                    a(href='#') click here
+                    | to get a new password.
+      
+
+      

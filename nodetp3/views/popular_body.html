@@ -1,0 +1,100 @@
+
+<!-- start: Content -->
+<div id="content" class="span10" ng-app='popular'>
+	
+	<div class="row-fluid" ng-controller="PostController" >		
+	<div class="box span12">
+	<div class="box-header">
+	<h2><i class="icon-user"></i><span class="break"></span>Popular Pages</h2>
+	<div class="box-icon">
+	<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+	<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+	<!--<a href="#" class="btn-close"><i class="icon-remove"></i></a>-->
+	</div>
+	</div>
+	<div class="box-content" >
+	<div class="row-fluid">
+	<div class="span6">		
+	
+	<!--	page size :
+	<a href="javascript:void(0)" style="padding-left:10px" ng-click="setPageSize(pageSize)" ng-repeat="pageSize in [10,20,30]"> {{pageSize}}</a>
+	-->
+	<label>
+	records per page: 
+	<!--
+	<select name="DataTables_Table_0_length" size="1"  aria-controls="DataTables_Table_0">
+	<option ng-repeat="pageSize in [10,20,30]" value="{{pageSize}}" data-ng-click="setPageSize(pageSize)" >{{pageSize}}</option>
+	
+	
+	</select>-->
+	<a href="javascript:void(0)" style="padding-left:10px" ng-click="setPageSize(pageSize)" ng-repeat="pageSize in [10,20,30]"> {{pageSize}}</a>
+	
+	</label>
+	
+	</div><!-- span6 -->
+	
+	<div class="span6">	
+	
+	<label>Search:<input type="text" ng-model="searchText"></label>
+	
+	</div><!--span6-->
+	</div><!--row-->
+	
+	
+	<!--	
+	<div class="available-headers">
+	<span class="available-header" ng-click="toggleHeader(header)" ng-repeat="header in availableHeaders" style="border:1px solid black; padding:10px; border-radius:10px; line-height:40px;">
+	{{header}}
+	</span>
+	</div>
+	<div class="page-size" style="padding-top:10px; padding-bottom:10px;">
+	page size :
+	<a href="javascript:void(0)" style="padding-left:10px" ng-click="setPageSize(pageSize)" ng-repeat="pageSize in [10,20,30]"> {{pageSize}}</a>
+	</div>
+	-->
+	<table class="table table-striped table-bordered">
+	<tr>
+	<td
+	ng-class="{
+	'sortBy' : head == orderHeader,
+	'asc':head == orderHeader && orderDirection == true,
+	'desc':head == orderHeader && orderDirection == false
+	}"
+	ng-click="orderTableBy(head)"
+	ng-repeat="head in headers">
+	{{head}}
+	</td>
+	</tr>
+	<tr ng-repeat="d in tableData | pagingFilter:dataPageSize:dataCurrentPage">
+	<td ng-repeat="head in headers">
+	{{d[head]}}
+	</td>
+	</tr>
+	</table>
+	
+	<div class="row-fluid">
+	<div class="span12">
+	Found {{tableData.length}} search results
+	</div>
+	<div class="span12 center">
+	<div class="dataTables_paginate paging_bootstrap pagination">
+	<paging data="tableData = ( data | orderBy:orderHeader:orderDirection | filter:searchText )" current-page="dataCurrentPage" page-size="dataPageSize">	
+	
+	</paging>
+	
+	
+	</div>
+	</div>
+	
+	</div>
+	
+	
+	</div>	
+	
+	</div>		
+	
+	</div>		
+	
+
+</div>
+<!-- end: Content -->

@@ -1,0 +1,369 @@
+//
+     start: Header 
+    .navbar(ng-app='nav')
+      .navbar-inner
+        .container-fluid
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.top-nav.nav-collapse,.sidebar-nav.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a#main-menu-toggle.hidden-phone.open
+            i.icon-reorder
+          .row-fluid
+            a.brand.span2(href='index.html')
+              span SimpliQ
+          //
+             start: Header Menu 
+          .nav-no-collapse.header-nav
+            ul.nav.pull-right
+              li.dropdown.hidden-phone
+                a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+                  i.icon-warning-sign
+                ul.dropdown-menu.notifications
+                  li.dropdown-menu-title
+                    span You have 11 notifications
+                  li
+                    a(href='#')
+                      span.icon.blue
+                        i.icon-user
+                      span.message New user registration
+                      span.time 1 min
+                  li
+                    a(href='#')
+                      span.icon.green
+                        i.icon-comment-alt
+                      span.message New comment
+                      span.time 7 min
+                  li
+                    a(href='#')
+                      span.icon.green
+                        i.icon-comment-alt
+                      span.message New comment
+                      span.time 8 min
+                  li
+                    a(href='#')
+                      span.icon.green
+                        i.icon-comment-alt
+                      span.message New comment
+                      span.time 16 min
+                  li
+                    a(href='#')
+                      span.icon.blue
+                        i.icon-user
+                      span.message New user registration
+                      span.time 36 min
+                  li
+                    a(href='#')
+                      span.icon.yellow
+                        i.icon-shopping-cart
+                      span.message 2 items sold
+                      span.time 1 hour
+                  li.warning
+                    a(href='#')
+                      span.icon.red
+                        i.icon-user
+                      span.message User deleted account
+                      span.time 2 hour
+                  li.warning
+                    a(href='#')
+                      span.icon.red
+                        i.icon-shopping-cart
+                      span.message Transaction was canceled
+                      span.time 6 hour
+                  li
+                    a(href='#')
+                      span.icon.green
+                        i.icon-comment-alt
+                      span.message New comment
+                      span.time yesterday
+                  li
+                    a(href='#')
+                      span.icon.blue
+                        i.icon-user
+                      span.message New user registration
+                      span.time yesterday
+                  li.dropdown-menu-sub-footer
+                    a View all notifications
+              //
+                 start: Notifications Dropdown 
+              li.dropdown.hidden-phone
+                a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+                  i.icon-tasks
+                ul.dropdown-menu.tasks
+                  li
+                    span.dropdown-menu-title You have 17 tasks in progress
+                  li
+                    a(href='#')
+                      span.header
+                        span.title iOS Development
+                        span.percent
+                      .taskProgress.progressSlim.progressBlue 80
+                  li
+                    a(href='#')
+                      span.header
+                        span.title Android Development
+                        span.percent
+                      .taskProgress.progressSlim.progressYellow 47
+                  li
+                    a(href='#')
+                      span.header
+                        span.title Django Project For Google
+                        span.percent
+                      .taskProgress.progressSlim.progressRed 32
+                  li
+                    a(href='#')
+                      span.header
+                        span.title SEO for new sites
+                        span.percent
+                      .taskProgress.progressSlim.progressGreen 63
+                  li
+                    a(href='#')
+                      span.header
+                        span.title New blog posts
+                        span.percent
+                      .taskProgress.progressSlim.progressPink 80
+                  li
+                    a.dropdown-menu-sub-footer View all tasks
+              //
+                 end: Notifications Dropdown 
+              //
+                 start: Message Dropdown 
+              li.dropdown.hidden-phone
+                a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+                  i.icon-envelope
+                ul.dropdown-menu.messages
+                  li
+                    span.dropdown-menu-title You have 9 messages
+                  li
+                    a(href='#')
+                      span.avatar
+                        img(src='public/img/avatar.jpg', alt='Avatar')
+                      span.header
+                        span.from
+                          | Lukasz Holeczek
+                        span.time
+                          | 6 min
+                      span.message
+                        | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                  li
+                    a(href='#')
+                      span.avatar
+                        img(src='public/img/avatar2.jpg', alt='Avatar')
+                      span.header
+                        span.from
+                          | Megan Abott
+                        span.time
+                          | 56 min
+                      span.message
+                        | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                  li
+                    a(href='#')
+                      span.avatar
+                        img(src='img/avatar3.jpg', alt='Avatar')
+                      span.header
+                        span.from
+                          | Kate Ross
+                        span.time
+                          | 3 hours
+                      span.message
+                        | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                  li
+                    a(href='#')
+                      span.avatar
+                        img(src='img/avatar4.jpg', alt='Avatar')
+                      span.header
+                        span.from
+                          | Julie Blank
+                        span.time
+                          | yesterday
+                      span.message
+                        | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                  li
+                    a(href='#')
+                      span.avatar
+                        img(src='img/avatar5.jpg', alt='Avatar')
+                      span.header
+                        span.from
+                          | Jane Sanders
+                        span.time
+                          | Jul 25, 2012
+                      span.message
+                        | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                  li
+                    a.dropdown-menu-sub-footer View all messages
+              //
+                 end: Message Dropdown 
+              li
+                a.btn(href='#')
+                  i.icon-wrench
+              //
+                 start: User Dropdown 
+              li.dropdown
+                a.btn.account.dropdown-toggle(data-toggle='dropdown', href='#')
+                  .avatar
+                    img(src='public/img/avatar.jpg', alt='Avatar')
+                  .user
+                    span.hello Welcome!
+                    span.name #{username}
+                ul.dropdown-menu
+                  li.dropdown-menu-title
+                  li
+                    a(href='#')
+                      i.icon-user
+                      | Profile
+                  li
+                    a(href='#')
+                      i.icon-cog
+                      | Settings
+                  li
+                    a(href='#')
+                      i.icon-envelope
+                      | Messages
+                  li
+                    a(href='/logout')
+                      i.icon-off
+                      | Logout
+    //
+       start: Header 
+    .container-fluid-full
+      include menu.jade
+        //
+           start: Content 
+        #content.span10
+          .row-fluid
+            .span3(ontablet='span6', ondesktop='span3')
+              .row-fluid
+                .span12.smallstat.box.mobileHalf
+                  .boxchart-overlay.blue
+                    .boxchart 5,6,7,2,0,4,2,4,8,2,3,3,2,5,6,7,2,0,4,2,4,8,2,3,3,2
+                  .title Today
+                  .value
+                  .title Views by
+                  .value
+                  .title People
+              .row-fluid
+                .span12.smallstat.box.mobileHalf
+                  .boxchart-overlay.red
+                    .boxchart 1,2,6,4,0,8,2,4,5,3,1,7,5,5,6,7,2,0,4,2,4,8,2,3,3,2
+                  .value 00:00:48
+                  .title Avg. Visit Duration
+            #tpHourVisitBar.main-chart.span9
+          .row-fluid
+            .span6(ontablet='span12', ondesktop='span6')
+              .row-fluid
+                .span12.multi-stat-box.box
+                  .header.row-fluid
+                    .left
+                      h2 Pageviews
+                      a.icon-chevron-down
+                    .right
+                      h2 MAY 15 - MAY 22
+                      .percent
+                        i.icon-double-angle-up
+                        | 22%
+                  .content.row-fluid
+                    .left
+                      ul
+                        li
+                          span.date Overall
+                          span.value {{overall}}
+                        li.active
+                          span.date This week
+                          span.value
+                        li
+                          span.date Yesterday
+                          span.value
+                        li
+                          span.date Today
+                          span.value
+                    .right
+                      .multi-stat-box-chart(style='height: 180px; width: 90%; padding: 10px;')
+                //
+                  /span
+            .box.blue.span6
+              .box-header
+                h2
+                  i.icon-bar-chart
+                  | Weekly Stat
+                .box-icon
+                  a.btn-minimize(href='#')
+                    i.icon-chevron-up
+                  a.btn-close(href='#')
+                    i.icon-remove
+              .box-content
+                .chart-type1(style='height: 170px;')
+          .row-fluid(ng-controller='dashController')
+            .box.span12
+              .box-header
+                h2
+                  i.icon-user
+                  span.break
+                  | Todays top content {{name}}
+                .box-icon
+                  a.btn-setting(href='#')
+                    i.icon-wrench
+                  a.btn-minimize(href='#')
+                    i.icon-chevron-up
+                  //
+                    <a href="#" class="btn-close"><i class="icon-remove"></i></a>
+              .box-content
+                .row-fluid
+                  .span6
+                    //
+                      page size :
+                      <a href="javascript:void(0)" style="padding-left:10px" ng-click="setPageSize(pageSize)" ng-repeat="pageSize in [10,20,30]"> {{pageSize}}</a>
+                    label
+                      | records per page:
+                      //
+                        <select name="DataTables_Table_0_length" size="1"  aria-controls="DataTables_Table_0">
+                        <option ng-repeat="pageSize in [10,20,30]" value="{{pageSize}}" data-ng-click="setPageSize(pageSize)" >{{pageSize}}</option>
+                        </select>
+                      a(href='javascript:void(0)', style='padding-left: 10px;', ng-click='setPageSize(pageSize)', ng-repeat='pageSize in [10,20,30]')  {{pageSize}}
+                  //
+                     span6 
+                  .span6
+                    label
+                      | Search:
+                      input(type='text', ng-model='searchText')
+                  //
+                    span6
+                //
+                  row
+                //
+                  <div class="available-headers">
+                  <span class="available-header" ng-click="toggleHeader(header)" ng-repeat="header in availableHeaders" style="border:1px solid black; padding:10px; border-radius:10px; line-height:40px;">
+                  {{header}}
+                  </span>
+                  </div>
+                  <div class="page-size" style="padding-top:10px; padding-bottom:10px;">
+                  page size :
+                  <a href="javascript:void(0)" style="padding-left:10px" ng-click="setPageSize(pageSize)" ng-repeat="pageSize in [10,20,30]"> {{pageSize}}</a>
+                  </div>
+                table.table.table-striped.table-bordered
+                  tr
+                    td(ng-class='{\'sortBy\' : head == orderHeader,\'asc\':head == orderHeader && orderDirection == true,\'desc\':head == orderHeader && orderDirection == false}', ng-click='orderTableBy(head)', ng-repeat='head in headers')
+                      | {{head}}
+                  tr(ng-repeat='d in tableData | pagingFilter:dataPageSize:dataCurrentPage')
+                    td(ng-repeat='head in headers')
+                      | {{d[head]}}
+                .row-fluid
+                  .span12
+                    | Found {{tableData.length}} search results
+                  .span12.center
+                    .dataTables_paginate.paging_bootstrap.pagination
+                      paging(data='tableData = ( data | orderBy:orderHeader:orderDirection | filter:searchText )', current-page='dataCurrentPage', page-size='dataPageSize')
+          //
+            row 
+        //
+           end: Content 
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+            h4.modal-title Modal title
+          .modal-body
+            | ...
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Save changes

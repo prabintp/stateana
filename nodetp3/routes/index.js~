@@ -1,0 +1,112 @@
+
+/*
+ * GET home page.
+ */
+
+exports.index = function(req, res){
+	record_visit(req, res);
+    if(req.user)
+      res.render('dash',{username: req.user['member_id']});
+    else
+      res.render('index');
+};
+
+function get_function(err,html){
+    console.log(html)
+    
+}
+
+exports.login = function(req, res){
+  
+  res.render('login');
+};
+
+exports.log = function(req, res){
+  
+   print_visits(req, res);
+};
+
+
+
+exports.popular = function(req, res){
+    if(req.session.lastPage) {
+        res.write('Last page was: ' + req.session.lastPage + '. ');
+    }
+    res.render('popular');
+}
+
+
+
+exports.partials = function (req, res) {
+  var name = req.params.name;
+  res.render('partials/' + name);
+};
+
+//dash items
+
+exports.dash = function(req, res){
+    console.log(req);
+    
+  if(!req.user)
+      res.redirect('/home');
+  else
+  res.render('dash',{username: req.user['first_name']});  
+};
+
+exports.topContent = function(req, res) {
+   sql1='SELECT v.ProjectID,v.pageURL as name,count(ProjectID) as count,DateTimeEnter FROM cf4a_VisitLog v  WHERE ProjectID = 1 and date(DateTimeEnter) = CURDATE() group by pageURL order by DateTimeEnter desc';
+ 	sql1='SELECT v.* FROM cf4a_VisitLog v  WHERE ProjectID = 1';
+ 
+  client.query(sql1,
+            function (err, results) {
+               
+                if (err) throw err;
+    res.end(JSON.stringify(results));
+
+             });
+              
+};
+
+//signup process
+exports.signup = function (req, res) {
+  if(!req.user)
+      res.render('signup',{title: 'signup'}); 
+  else
+    res.redirect('/dash');
+};
+
+var record_visit = function(req, res){
+    /* Connect to the DB and auth */
+    require('mongodb').connect(mongourl, function(err, conn){
+    conn.collection('ips', function(err, coll){
+    /* Simple object to insert: ip address and date */
+    object_to_insert = { 'ip': req.connection.remoteAddress, 'ts': new Date() };
+    /* Insert the object then print in response */
+    /* Note the _id has been created */
+    coll.insert( object_to_insert, {safe:true}, function(err){
+    	console.log(object_to_insert);
+    	return true;
+    /*res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.write(JSON.stringify(object_to_insert));
+    res.end('\n');*/
+    });
+    });
+    });
+    }
+    
+       var print_visits = function(req, res){
+    /* Connect to the DB and auth */
+    require('mongodb').connect(mongourl, function(err, conn){
+    conn.collection('ips', function(err, coll){
+    coll.find({}, {limit:10, sort:[['_id','desc']]}, function(err, cursor){
+    cursor.toArray(function(err, items){
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    for(i=0; i<items.length;i++){
+    res.write(JSON.stringify(items[i]) + "\n");
+    }
+    res.end();
+    });
+    });
+    });
+    });
+    }
