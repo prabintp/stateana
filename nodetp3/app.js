@@ -170,7 +170,7 @@ app.get('/sites/new',routes.new_sites);
 app.get('/sites/get_sites',routes.get_sites);
 
 //browser
-app.get('/sites',routes.sites);
+app.get('/browser',routes.sites);
 
 
 app.get('/partials/:name', routes.partials);
