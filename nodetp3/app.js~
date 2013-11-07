@@ -2,7 +2,7 @@
 /**
  * 
  * prabintp@aol.com
- * last updated oct 4 2013
+ * last updated oct 24 2013
  */
 //Module dependencies
 var express = require('express'),
@@ -16,48 +16,24 @@ passport = require('passport'),
 LocalStrategy = require('passport-local').Strategy;
   
 //MySQL
-/*
+
 var sqlInfo = {
     host: 'localhost', 
     user: 'root',
-    password: 'exalt', 
+    password: '', 
     database: 'sa'
 }
+/*
 
+var sqlInfo = {
+  host: 'ap01-user01.c0ye1hvnkw6z.ap-southeast-1.rds.amazonaws.com', 
+  user: 'uHJnIOAz4pfz8',
+  password: 'p1ER20bCzfHjp', 
+  database: 'd14a406252e744680aca10c5e2ca8026c',
+  port:3306
+}
 */
-var sqlInfo = {
-  host: 'ap01-user01.c0ye1hvnkw6z.ap-southeast-1.rds.amazonaws.com', 
-  user: 'uHJnIOAz4pfz8',
-  password: 'p1ER20bCzfHjp', 
-  database: 'd14a406252e744680aca10c5e2ca8026c',
-  port:3306
-}
 
-/*
-if(process.env.VCAP_SERVICES){
-	var menv = JSON.parse(process.env.VCAP_SERVICES);
-	var mysql = menv['mysql-5.1'][0]['credentials'];
-	
-	var sqlInfo = {
-  host: 'ap01-user01.c0ye1hvnkw6z.ap-southeast-1.rds.amazonaws.com', 
-  user: 'uHJnIOAz4pfz8',
-  password: 'p1ER20bCzfHjp', 
-  database: 'd14a406252e744680aca10c5e2ca8026c',
-  port:3306
-}
-	
-	
-	}else{
-		
-	var sqlInfo = {
-    host: 'localhost', 
-    user: 'root',
-    password: 'exalt', 
-    database: 'sa'
-}
-		
-		}
-*/		
 		
 
 	
@@ -164,8 +140,12 @@ app.get('/logout', function(req, res){
     res.redirect('/home');
 });
 
-//get sites
+//sites
 app.get('/sites',routes.sites);
+app.get('/sites/new',routes.new_sites);
+app.get('/sites/get_sites',routes.get_sites);
+
+
 app.get('/partials/:name', routes.partials);
 // JSON API
 app.get('/api/name', api.name);
@@ -186,18 +166,18 @@ app.post('/signup_submit',routes.signup_submit);
 app.get('/log',routes.log);
 //to project dashboard
 app.get('/popular',routes.popular);
-// redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+
 /**
  * ajax calls starts
  */
 //get todays top content json ajax
 app.get('/dash/today_top_content',routes.topContent);
-
+app.post('/ischeck/email',routes.check_isemail);
 /**
  * ajax calls ends
  */
-
+// redirect all others to the index (HTML5 history)
+app.get('*', routes.index);
 /**
  * routes end---------------------------------------------------------------------
  */
