@@ -23,24 +23,9 @@
            start: Content 
         #content.span10(ng-controller="sitesController")
           .row-fluid
-            h1(class="headone")
-             i(class="icon-desktop") 
-             |Sites
-             a(class="headone_add",href="sites/new_site")
-              i(class="icon-plus-sign")
-          .row-fluid
             .span12(ontablet='span6', ondesktop='span12')
-                .span4.smallstat.box.mobileHalf(ng-repeat="site in sites")
-                  .boxchart-overlay.blue
-                    .boxchart 5,6,7,2,0,4,2,4,8,2,3,3,2,5,6,7,2,0,4,2,4,8,2,3,3,2
-                  .title 
-                  | Project
-                  .value
-                  | {{site.project_name}}
-                  .title
-                  | Views by {{site.total_page_views}}
-                  .value
-                  .title People 
+                
+           end: Content 
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
     .modal-dialog
         .modal-content

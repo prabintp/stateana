@@ -189,6 +189,13 @@ exports.get_sites=function(req, res){
              });
 
 }
+exports.new_sites=function(req, res){
+
+        res.render('new_site',{
+            username: req.user['first_name']
+        }); 
+
+}
 
 var record_visit = function(req, res){
     /* Connect to the DB and auth */
