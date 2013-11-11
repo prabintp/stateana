@@ -26,15 +26,15 @@
             h1(class="headone")
              i(class="icon-desktop") 
              |Sites
-             a(class="headone_add",href="sites/new_site")
+             a(class="headone_add",href="sites/new")
               i(class="icon-plus-sign")
           .row-fluid
             .span12(ontablet='span6', ondesktop='span12')
                 .span4.smallstat.box.mobileHalf(ng-repeat="site in sites")
                   .boxchart-overlay.blue
-                    .boxchart 5,6,7,2,0,4,2,4,8,2,3,3,2,5,6,7,2,0,4,2,4,8,2,3,3,2
+                    a.site_nameh(href="/dash/{{site.project_id}}") {{site.project_name}}
                   .title 
-                  | Project
+                  | {{site.project_url}}
                   .value
                   | {{site.project_name}}
                   .title

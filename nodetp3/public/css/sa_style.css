@@ -1,0 +1,38 @@
+.add_site_form{
+
+padding-left:10%;
+padding-right:10%;
+}
+.add_site_form input{
+font-size: 22px;
+    height: 30px;
+   
+    padding-left: 5px;
+}
+.add_site_form select{
+font-size: 16px;
+    height: 35px;
+   
+    padding-left: 5px;
+
+}
+.add_site_form label{
+font-size: 16px;
+   
+
+}
+
+.add_site_form .submit{
+font-size: 16px;
+   margin-top:20px;
+
+}
+
+.site_nameh{
+ font-size:16px;
+color:#fff;
+}
+.site_nameh:hover{
+
+text-decoration:none;
+}

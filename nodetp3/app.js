@@ -19,7 +19,7 @@ LocalStrategy = require('passport-local').Strategy;
 var sqlInfo = {
     host: 'localhost', 
     user: 'root',
-    password: 'exalt', 
+    password: '', 
     database: 'sa'
 }
 
@@ -166,6 +166,7 @@ app.get('/logout', function(req, res){
 //sites
 app.get('/sites',routes.sites);
 app.get('/sites/new',routes.new_sites);
+app.post('/newsite_submit',routes.site_submit);
 app.get('/sites/get_sites',routes.get_sites);
 
 //browser
@@ -178,7 +179,7 @@ app.get('/api/name', api.name);
 // redirect all others to the index (HTML5 history)
 app.post('/login',
     passport.authenticate('local', {
-        successRedirect: '/dash',
+        successRedirect: '/sites',
         failureRedirect: '/home'
     })
     );

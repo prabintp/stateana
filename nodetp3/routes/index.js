@@ -7,7 +7,7 @@ exports.index = function(req, res){
     //record_visit(req, res);
     if(req.user)
         res.render('dash',{
-            username: req.user['member_id']
+            username: req.user['first_name']
         });
     else
         res.render('index');
@@ -73,11 +73,26 @@ exports.dash = function(req, res){
     
    if(!req.user)
         res.redirect('/home');
-    else
-        res.render('dash',{
-            username: req.user['first_name']
-        }); 
-  
+    else{
+	
+	//console.log(JSON.stringify(req));
+	var site_id = 1;
+	var sqlpro = "SELECT * FROM `sa_projects` where  project_id = "+ site_id +" LIMIT 1";
+	console.log(sqlpro);
+	client.query(sqlpro,
+        function (err, results) {
+            console.log(results['project_name']+results[0]['project_name']);   
+            if (err) throw err;        
+             console.log(JSON.stringify(results));
+            res.render('dash',{
+            username: req.user['first_name'],
+	    site_name: results[0]['project_name']
+            });
+
+        });
+
+         
+  }
     
 };
 
@@ -163,6 +178,30 @@ exports.signup_submit = function (req, res) {
       
     else
         res.redirect('/dash');
+};
+
+//signup process
+exports.site_submit = function (req, res) {
+	var sname=req.body.sname;
+        var surl=req.body.surl;
+	var member_id=req.user['member_id'];
+    if(sname && surl){
+		console.log(sname+surl);
+
+		sql1="INSERT INTO `sa`.`sa_projects` (`project_name`, `project_uid`, `member_id`, `project_url`) VALUES ('"+sname+"', "+member_id+", "+member_id+", '"+surl+"');";
+ 
+  client.query(sql1,
+            function (err, results) {
+               
+                if (err) throw err;
+               
+    res.end(JSON.stringify(results));
+
+             });
+   
+
+		
+}
 };
 
 exports.sites=function(req, res){

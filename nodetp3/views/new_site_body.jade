@@ -23,129 +23,55 @@
            start: Content 
         #content.span10(ng-controller="addSiteController")
            .row-fluid
-              .box.span12
-                .box-header
-                  h2
-                    i.icon-edit
-                    | Form Elements
-                  .box-icon
-                    a.btn-setting(href='#')
-                      i.icon-wrench
-                    a.btn-minimize(href='#')
-                      i.icon-chevron-up
-                    a.btn-close(href='#')
-                      i.icon-remove
+              .box.span8
                 .box-content
-                  form.form-horizontal
+                 .add_site_form
+                  .page-header
+                    h1
+                     | Add an Site in Seconds & Start Tracking
+                    small Headings, paragraphs, lists, and other inline type elements
+                  form.form-horizontal(action='/newsite_submit',method='post',name='newsite_form')
                     fieldset
+                        .control-group
+                         label(for='focusedInput') Enter your Site Name
+                         input#focusedInput.input-xlarge.focused(type='text',name='sname', ng-model='signup.sname',required,ng-minlength=3)
+                         .error(ng-show='newsite_form.email.$dirty && signup_form.sname.$invalid')
+                           small.error(ng-show='newsite_form.sname.$error.required')
+                            | Your Email is required.
+                           small.error(ng-show='newsite_form.sname.$error.email')
+                            | Your Email should be valid one.
+                           small.error(ng-show='newsite_form.sname.$error.unique')
+                            | Email already exist.
+                         span.help-block suitable custom name for your site
+                        .control-group
+                         label(for='focusedInput') Enter your Site URL
+                         input#focusedInput.input-xlarge.focused(type='text', name='surl', ng-model='signup.surl',required)
+                         span.help-block eg: www.example.com
+                        .control-group
+                          label(for='selectError3') Pick your Country
+                          select#selectError3.span
+                             option Option 1
+                             option Option 2
+                             option Option 3
+                             option Option 4
+                             option Option 5
+                         .control-group
+                          label(for='selectError3') TimeZone
+                          select#selectError3.span
+                             option Option 1
+                             option Option 2
+                             option Option 3
+                             option Option 4
+                             option Option 5
                       .control-group
-                        label.control-label(for='focusedInput') Focused input
-                        .controls
-                          input#focusedInput.input-xlarge.focused(type='text', value='This is focused…')
-                      .control-group
-                        label.control-label Uneditable input
-                        .controls
-                          span.input-xlarge.uneditable-input Some value here
-                      .control-group
-                        label.control-label(for='disabledInput') Disabled input
-                        .controls
-                          input#disabledInput.input-xlarge.disabled(type='text', placeholder='Disabled input here…', disabled='')
-                      .control-group
-                        label.control-label(for='optionsCheckbox2') Disabled checkbox
-                        .controls
-                          label.checkbox
-                            input#optionsCheckbox2(type='checkbox', value='option1', disabled='')
-                            | This is a disabled checkbox
-                      .control-group.warning
-                        label.control-label(for='inputWarning') Input with warning
-                        .controls
-                          input#inputWarning(type='text')
-                          span.help-inline Something may have gone wrong
-                      .control-group.error
-                        label.control-label(for='inputError') Input with error
-                        .controls
-                          input#inputError(type='text')
-                          span.help-inline Please correct the error
-                      .control-group.success
-                        label.control-label(for='inputSuccess') Input with success
-                        .controls
-                          input#inputSuccess(type='text')
-                          span.help-inline Woohoo!
-                      .control-group
-                        label.control-label(for='selectError3') Plain Select
-                        .controls
-                          select#selectError3
-                            option Option 1
-                            option Option 2
-                            option Option 3
-                            option Option 4
-                            option Option 5
-                      .control-group
-                        label.control-label(for='selectError') Modern Select
-                        .controls
-                          select#selectError(data-rel='chosen')
-                            option Option 1
-                            option Option 2
-                            option Option 3
-                            option Option 4
-                            option Option 5
-                      .control-group
-                        label.control-label(for='selectError1') Multiple Select / Tags
-                        .controls
-                          select#selectError1(multiple='multiple', data-rel='chosen')
-                            option Option 1
-                            option(selected='selected') Option 2
-                            option Option 3
-                            option Option 4
-                            option Option 5
-                      .control-group
-                        label.control-label(for='selectError2') Group Select
-                        .controls
-                          select#selectError2(data-placeholder='Your Favorite Football Team', data-rel='chosen')
-                            option(value='')
-                            optgroup(label='NFC EAST')
-                              option Dallas Cowboys
-                              option New York Giants
-                              option Philadelphia Eagles
-                              option Washington Redskins
-                            optgroup(label='NFC NORTH')
-                              option Chicago Bears
-                              option Detroit Lions
-                              option Green Bay Packers
-                              option Minnesota Vikings
-                            optgroup(label='NFC SOUTH')
-                              option Atlanta Falcons
-                              option Carolina Panthers
-                              option New Orleans Saints
-                              option Tampa Bay Buccaneers
-                            optgroup(label='NFC WEST')
-                              option Arizona Cardinals
-                              option St. Louis Rams
-                              option San Francisco 49ers
-                              option Seattle Seahawks
-                            optgroup(label='AFC EAST')
-                              option Buffalo Bills
-                              option Miami Dolphins
-                              option New England Patriots
-                              option New York Jets
-                            optgroup(label='AFC NORTH')
-                              option Baltimore Ravens
-                              option Cincinnati Bengals
-                              option Cleveland Browns
-                              option Pittsburgh Steelers
-                            optgroup(label='AFC SOUTH')
-                              option Houston Texans
-                              option Indianapolis Colts
-                              option Jacksonville Jaguars
-                              option Tennessee Titans
-                            optgroup(label='AFC WEST')
-                              option Denver Broncos
-                              option Kansas City Chiefs
-                              option Oakland Raiders
-                              option San Diego Chargers
-                      .form-actions
-                        button.btn.btn-primary(type='submit') Save changes
-                        button.btn Cancel
+                        button.btn.btn-primary.span6.submit(type='submit') Click and get Your Tracking code
+               .box.span4
+                 .box-content
+                  .page-header
+                    h1
+                     | "Hi #{username}"
+                    h4 "We will guidline you"
+                
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
     .modal-dialog
         .modal-content

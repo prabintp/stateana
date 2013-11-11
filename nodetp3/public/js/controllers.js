@@ -81,15 +81,19 @@ angular.module('myApp.controllers', []).
             }
         }
     }).
+    controller('addSiteController', function ($scope) {
+        // write Ctrl here
+        $scope.submitted = false;
+        $scope.signupForm = function() {
+            if ($scope.signup_form.$valid) {
+            // Submit as normal
+            } else {
+                $scope.signup_form.submitted = true;
+            }
+        }
+    }).
     controller('sitesController', function ($scope, $http) {
         // write Ctrl here
-      /* $scope.sites = [
-{name:'learn angular', value:234},
-{name:'learn angular', value:234},
-{name:'learn angular', value:234},
-{name:'learn angular', value:234},
-{name:'learn angular', value:234},
-{name:'build an angular app', value:345}];*/
 
   $http.get('/sites/get_sites').success(function(d) {
             $scope.sites = d;
