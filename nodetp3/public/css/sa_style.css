@@ -36,3 +36,13 @@ color:#fff;
 
 text-decoration:none;
 }
+
+.site_item:nth-child(4),.site_item:nth-child(7),.site_item:nth-child(10){  
+
+margin-left:0px;
+}
+.project_label{
+padding:10px;
+color:#fff;
+
+}

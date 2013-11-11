@@ -26,17 +26,18 @@ script(src='/js/lib/js_geocluster.js')
         //
            start: Content 
         #content.span10(ng-controller="geoclusterController")
-          .row-fluid
-            h1(class="headone")
-             i(class="icon-desktop") 
-             | {{name}}
-             a(class="headone_add",href="sites/new_site")
-              i(class="icon-plus-sign")
-          .row-fluid
-            .span8(ontablet='span6', ondesktop='span8')
-              map#geocluster_map
-            .span4
-              input(type="text",ng-model="limit",id="limit")
+         .row-fluid
+           .span9
+             .row-fluid
+               h1(class="headone")
+                i(class="icon-certificate") 
+                | {{name}}
+             .row-fluid
+               .span12.box(ontablet='span12', ondesktop='span12')
+                 map#geocluster_map
+           .span3.box
+             .box-content
+                 input(type="text",ng-model="limit",id="limit")
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
     .modal-dialog
         .modal-content

@@ -18,21 +18,23 @@
     //
        start: Header 
     .container-fluid-full
-      include menu.jade
+      // include menu.jade
         //
            start: Content 
-        #content.span10(ng-controller="sitesController")
-          .row-fluid
-            h1(class="headone")
-             i(class="icon-desktop") 
-             |Sites
-             a(class="headone_add",href="sites/new")
-              i(class="icon-plus-sign")
-          .row-fluid
-            .span12(ontablet='span6', ondesktop='span12')
-                .span4.smallstat.box.mobileHalf(ng-repeat="site in sites")
+        #content.span12(ng-controller="sitesController")
+         .row-fluid
+          .span8
+           .row-fluid
+             h1(class="headone")
+              i(class="icon-desktop") 
+              |Sites
+              a(class="headone_add",href="sites/new")
+               i(class="icon-plus-sign")
+           .row-fluid
+            .span12(ontablet='span12', ondesktop='span12')
+                .span4.smallstat.box.site_item.mobileHalf(ng-repeat="site in sites")
                   .boxchart-overlay.blue
-                    a.site_nameh(href="/dash/{{site.project_id}}") {{site.project_name}}
+                    a.site_nameh(href="/dash?siteid={{site.project_id}}") {{site.project_name}}
                   .title 
                   | {{site.project_url}}
                   .value
@@ -41,6 +43,13 @@
                   | Views by {{site.total_page_views}}
                   .value
                   .title People 
+          .span3
+           .box
+            .box-content
+              h1
+              | hai try to assist you
+              h1
+              h1
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
     .modal-dialog
         .modal-content
