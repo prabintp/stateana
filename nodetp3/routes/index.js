@@ -268,3 +268,31 @@ var user_create = function(req, res){
     });
    
 }
+
+exports.geocluster= function (req, res) {
+  /*  if(!req.user)
+        res.redirect('/home');
+    else*/
+        res.render('geocluster',{
+            username: 'fffff'
+        }); 
+};
+
+exports.geocluster_data= function (req, res) {
+   if(req.body.limit)
+    var limit = req.body.limit;
+ else
+    var limit = 100;
+    
+    sql='SELECT ProjectID,longitude,latitude  FROM cf4a_VisitLog v  WHERE v.ProjectID = 1 LIMIT '+limit;
+ 
+  client.query(sql,
+            function (err, results) {
+               
+                if (err) throw err;
+               
+    res.end(JSON.stringify(results));
+
+             });
+
+}
