@@ -99,6 +99,12 @@ angular.module('myApp.controllers', []).
             $scope.sites = d;
             });
        
+    }).controller('geoclusterController', function ($scope, $http) {
+
+        $scope.name = 'cluster';
+        $scope.limit = 5;
+       
+
     });
         
         

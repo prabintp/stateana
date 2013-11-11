@@ -172,6 +172,10 @@ app.get('/sites/get_sites',routes.get_sites);
 //browser
 app.get('/browser',routes.browser);
 
+//geo
+app.get('/geocluster',routes.geocluster);
+app.post('/geocluster_data',routes.geocluster_data);
+
 
 app.get('/partials/:name', routes.partials);
 // JSON API

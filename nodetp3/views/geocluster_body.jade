@@ -1,0 +1,50 @@
+script(src='http://maps.google.com/maps/api/js?sensor=false')
+script(src='http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js')
+script(src='/js/lib/js_geocluster.js')
+//
+     start: Header 
+    .navbar(ng-app='nav')
+      .navbar-inner
+        .container-fluid
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.top-nav.nav-collapse,.sidebar-nav.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a#main-menu-toggle.hidden-phone.open
+            i.icon-reorder
+          .row-fluid
+            a.brand.span2(href='index.html')
+              span SimpliQ
+          //
+             start: Header Menu 
+          include top_header.jade
+    //
+       start: Header
+
+    .container-fluid-full
+      include menu.jade
+        //
+           start: Content 
+        #content.span10(ng-controller="geoclusterController")
+          .row-fluid
+            h1(class="headone")
+             i(class="icon-desktop") 
+             | {{name}}
+             a(class="headone_add",href="sites/new_site")
+              i(class="icon-plus-sign")
+          .row-fluid
+            .span8(ontablet='span6', ondesktop='span8')
+              map#geocluster_map
+            .span4
+              input(type="text",ng-model="limit",id="limit")
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+            h4.modal-title Modal title
+          .modal-body
+            | ...
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Save changes
