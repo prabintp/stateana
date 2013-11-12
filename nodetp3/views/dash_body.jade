@@ -26,82 +26,23 @@
             h1(class="headone")
              i(class="icon-bar-chart") 
              | Dashboard
-          .row-fluid
-            .span3(ontablet='span6', ondesktop='span3')
-              .row-fluid
-                .span12.smallstat.box.mobileHalf
-                  .boxchart-overlay.blue
-                    .boxchart 5,6,7,2,0,4,2,4,8,2,3,3,2,5,6,7,2,0,4,2,4,8,2,3,3,2
-                  .title Today
-                  .value
-                  .title Views by
-                  .value
-                  .title People
-              .row-fluid
-                .span12.smallstat.box.mobileHalf
-                  .boxchart-overlay.red
-                    .boxchart 1,2,6,4,0,8,2,4,5,3,1,7,5,5,6,7,2,0,4,2,4,8,2,3,3,2
-                  .value 00:00:48
-                  .title Avg. Visit Duration
-            #tpHourVisitBar.main-chart.span9
-          .row-fluid
-            .span6(ontablet='span12', ondesktop='span6')
-              .row-fluid
-                .span12.multi-stat-box.box
-                  .header.row-fluid
-                    .left
-                      h2 Pageviews
-                      a.icon-chevron-down
-                    .right
-                      h2 MAY 15 - MAY 22
-                      .percent
-                        i.icon-double-angle-up
-                        | 22%
-                  .content.row-fluid
-                    .left
-                      ul
-                        li
-                          span.date Overall
-                          span.value {{overall}}
-                        li.active
-                          span.date This week
-                          span.value
-                        li
-                          span.date Yesterday
-                          span.value
-                        li
-                          span.date Today
-                          span.value
-                    .right
-                      .multi-stat-box-chart(style='height: 180px; width: 90%; padding: 10px;')
-                //
-                  /span
-            .box.blue.span6
-              .box-header
-                h2
-                  i.icon-bar-chart
-                  | Weekly Stat
-                .box-icon
-                  a.btn-minimize(href='#')
-                    i.icon-chevron-up
-                  a.btn-close(href='#')
-                    i.icon-remove
-              .box-content
-                .chart-type1(style='height: 170px;')
+          .row-fluid.desk_count
+            .span3
+              h1  23
+            .span3
+              h1  345
+            .span3
+              h1 678
+            .span3
+              h1  46754587
+          .row-fluid.box.cont_bag
+            .bag-header.span12
+              h1 visit chart
+            #tpHourVisitBar.main-chart.span10
           .row-fluid(ng-controller='dashController')
-            .box.span12
-              .box-header
-                h2
-                  i.icon-user
-                  span.break
-                  | Todays top content {{name}}
-                .box-icon
-                  a.btn-setting(href='#')
-                    i.icon-wrench
-                  a.btn-minimize(href='#')
-                    i.icon-chevron-up
-                  //
-                    <a href="#" class="btn-close"><i class="icon-remove"></i></a>
+            .box.span8.cont_bag
+              .bag-header.span12
+                h1 Today's Top Content
               .box-content
                 .row-fluid
                   .span6
@@ -148,6 +89,12 @@
                   .span12.center
                     .dataTables_paginate.paging_bootstrap.pagination
                       paging(data='tableData = ( data | orderBy:orderHeader:orderDirection | filter:searchText )', current-page='dataCurrentPage', page-size='dataPageSize')
+            .box.span4.cont_bag
+              .bag-header.span12
+                 h1 visit chart
+              #piechart(height="300")
+              #donutchart(height="300")
+              
           //
             row 
         //

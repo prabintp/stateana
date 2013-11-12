@@ -19,7 +19,7 @@ LocalStrategy = require('passport-local').Strategy;
 var sqlInfo = {
     host: 'localhost', 
     user: 'root',
-    password: '', 
+    password: 'exalt', 
     database: 'sa'
 }
 
